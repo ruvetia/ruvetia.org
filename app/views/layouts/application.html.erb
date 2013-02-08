@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="keywords" content="ruby, user group, switzerland, development, web, meet, meetup, bern, basel">
-  <meta name="description" content="Ruvetia is a swiss-wide user group for Ruby developers.">
+  <head>
+    <meta name="keywords" content="ruby, user group, switzerland, development, web, meet, meetup, bern, basel">
+    <meta name="description" content="Ruvetia is a swiss-wide user group for Ruby developers.">
 
-  <title>Ruvetia | meet Ruby Developers in Switzerland</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <title>Ruvetia | meet Ruby Developers in Switzerland</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
     <%= yield %>
 
-</body>
+  </body>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -21,9 +21,9 @@
     _gaq.push(['_trackPageview']);
 
     (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 
   </script>
