@@ -1,0 +1,2 @@
+BASEDIR=$(dirname $0)
+rvm use --create `cat $BASEDIR/.ruby-version`@ruvetia
