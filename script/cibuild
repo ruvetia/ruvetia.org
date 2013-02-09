@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'erb'
+require 'tinder'
+
+#
+# Campfire debugging
+#
+campfire_subdomain = ENV['CAMPFIRE_SUBDOMAIN']
+campfire_token = ENV['CAMPFIRE_TOKEN']
+
+campfire = Tinder::Campfire.new campfire_subdomain, token: campfire_token
+danger_room = campfire.rooms[1] # Codegestalt Danger Room
+
+#
+# Load needed files
+#
+config_file = YAML.load(ERB.new(File.read('script/ciconfig.yml')).result)
+
+#
+# Evaluate the branch that should get built.
+#
+active_branch = ENV['JANKY_BRANCH']
+
+case
+when active_branch.match("master")
+  CONFIG = config_file["master"]
+else
+  CONFIG = config_file["staging"]
+end
+
+# Run tests
+# TODO: Run tests here
+# Exit if the tests fail!
+
+#
+# Add Heroku configuration
+#
+unless CONFIG["heroku_config"].nil?
+  configuration = []
+  CONFIG["heroku_config"].each do |key, value|
+    configuration << "#{key.upcase}='#{value}'"
+  end
+  system("heroku config:add #{configuration.join(' ')} --app #{CONFIG["heroku_app"]}")
+else
+  puts "No heroku configuration found"
+end
+
+#
+# Push to heroku
+#
+unless system("git push #{CONFIG["heroku_remote"]} master --force")
+  danger_room.speak "Error: something went wrong while pushing to #{CONFIG["heroku_app"]}... aborting..."
+  exit(1)
+end
+
+#
+# Database stuff (future)
+#
+#system("heroku run rake db:migrate --app #{config["heroku_app"]}")
+#system("heroku run rake db:seed --app #{config["heroku_app"]}")
+#
+#
+# Restart the application
+#
+system("heroku restart --app #{CONFIG["heroku_app"]}")
