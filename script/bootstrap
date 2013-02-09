@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+
+#
+# bootstrap
+#
+
+#
+# Welcome to the ruvetia Bootstrap Script
+#
+puts ""
+puts "Ruvetia.org bootstrap"
+puts "================ "
+puts ""
+puts "! Logs will be written to: log/boostrap.log"
+system ("echo 'Bootstrap started at #{Time.now}' > log/bootstrap.log")
+puts ""
+
+#
+# lol constants
+#
+HEROKU_PRODUCTION = "ruvetia-master"
+HEROKU_STAGING = "ruvetia-staging"
+
+#
+# Check for Bundler
+#
+unless system("which bundle 2>&1 > /dev/null")
+  puts "x You need to install Bundler:"
+  puts "  => gem isntall bundler"
+  exit(1)
+else
+  puts "+ Bundler found."
+end
+
+#
+# Check for Heroku toolbelt
+#
+unless system("which heroku 2>&1 > /dev/null")
+  puts "+ You need to install the Heroku toolbelt:"
+  puts "  => https://toolbelt.heroku.com/"
+  exit(1)
+else
+  puts "+ Heroku toolbelt found."
+end
+
+#
+# Lets install some bundles
+#
+puts ""
+puts "Installing bundles..."
+system("bundle install >> log/bootstrap.log")
+
+#
+# DONE
+#
+puts ""
+puts "Sweet, my job here is done!"
