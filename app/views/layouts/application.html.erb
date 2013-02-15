@@ -9,11 +9,17 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
+
   <body>
-
-    <%= yield %>
-
+    <div class="full-width">
+      <div class="wrapper">
+        <div class="inner">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
+
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
