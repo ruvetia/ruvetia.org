@@ -1,4 +1,24 @@
 <ul>
   <li><%= link_to "Home", "#" %></li>
   <li><%= link_to "Team", "#" %></li>
+  <li class="right">
+    <%= link_to $ruvetia[:github] do %>
+      <i class="icon-github"></i>
+    <% end %>
+  </li>
+  <li class="right">
+    <%= link_to $ruvetia[:twitter] do %>
+      <i class="icon-twitter"></i>
+    <% end %>
+  </li>
+  <li class="right">
+    <%= link_to $ruvetia[:mailing_list] do %>
+      <i class="icon-comments-alt"></i>
+    <% end %>
+  </li>
+  <li class="right">
+    <%= link_to "mailto:#{$ruvetia[:email]}" do %>
+      <i class="icon-envelope"></i>
+    <% end %>
+  </li>
 </ul>
