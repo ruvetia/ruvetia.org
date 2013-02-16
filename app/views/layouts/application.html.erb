@@ -13,10 +13,27 @@
   <body>
     <div class="full-width">
       <div class="wrapper">
-        <div class="inner">
-          <div class="main">
+        <div class="main">
+
+          <div id="logo-overlay">
+            <div class="logo">
+              <%= image_tag "ruvetia-logo.png", class: "logo-big" %>
+              <h1>Ruvetia</h1>
+            </div>
+          </div>
+
+          <div id="navigation-overlay">
+            <div class="navigation">
+              <%= render 'layouts/navigation' %>
+            </div>
+            <div class="fadeout">
+            </div>
+          </div>
+
+          <div id="content">
             <%= yield %>
           </div>
+
         </div>
       </div>
     </div>
