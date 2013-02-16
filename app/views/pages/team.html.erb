@@ -1,0 +1,13 @@
+<ul class="team">
+  <% ruvetia_team.each do |member| %>
+    <li>
+      <div class="member-image">
+        <%= image_tag member.image_url, class: "avatar" %>
+      </div>
+      <div class="member-info">
+        <h3><%= member.name %></h3>
+        <p><%= member.bio %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>
