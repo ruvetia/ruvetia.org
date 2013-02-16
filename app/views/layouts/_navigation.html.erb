@@ -2,23 +2,23 @@
   <li><%= link_to "Home", "#" %></li>
   <li><%= link_to "Team", "#" %></li>
   <li class="right">
-    <%= link_to $ruvetia[:github] do %>
-      <i class="icon-github"></i>
+    <%= link_to "mailto:#{$ruvetia[:email]}" do %>
+      <i class="icon-envelope"></i>
     <% end %>
   </li>
   <li class="right">
-    <%= link_to $ruvetia[:twitter] do %>
+    <%= link_to $ruvetia[:twitter], :target => :blank do %>
       <i class="icon-twitter"></i>
     <% end %>
   </li>
   <li class="right">
-    <%= link_to $ruvetia[:mailing_list] do %>
+    <%= link_to $ruvetia[:mailing_list], :target => :blank do %>
       <i class="icon-comments-alt"></i>
     <% end %>
   </li>
   <li class="right">
-    <%= link_to "mailto:#{$ruvetia[:email]}" do %>
-      <i class="icon-envelope"></i>
+    <%= link_to $ruvetia[:github], :target => :blank do %>
+      <i class="icon-github"></i>
     <% end %>
   </li>
 </ul>
