@@ -3,11 +3,18 @@
     <li>
       <div class="member-image">
         <%= image_tag member.image_url, class: "avatar" %>
+
+        <ul class="member-social-links">
+          <%= render "_shared/social_media_links", data: member.social_media %>
+        </ul>
+
       </div>
+
       <div class="member-info">
         <h3><%= member.name %></h3>
         <p><%= member.bio %></p>
       </div>
+
     </li>
   <% end %>
 </ul>
