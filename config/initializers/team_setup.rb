@@ -14,7 +14,7 @@ $team << Organizer.new('Rodrigo Haenggi',
 $team << Organizer.new('Daniel Puglisi',
                        social_media: { github: 'http://github.com/danielpuglisi', twitter: 'https://twitter.com/danielpuglisi' },
                        gravatar_hash: "34fd3386654f1b625e1d3b8b6c43a217",
-                       bio: "Ruby, Ruby, Ruby...")
+                       bio: "Fascinated by Ruby's english like syntax, the Rails Framework and the awesome community behind it, Daniel decided to put Ruby into his design and programming toolbox. Ruvetia is his attempt to make Ruby more fundamental and popular in Switzerland and to spread the love about this beautiful programming language and its extraordinary people behind it.")
 
 $team << Organizer.new('Kaspar Schiess',
                        social_media: { github: 'http://github.com/kschiess', twitter: 'https://twitter.com/kasparschiess' },
