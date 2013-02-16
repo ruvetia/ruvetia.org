@@ -1,24 +1,5 @@
 <ul>
   <li><%= link_to "Home", root_path %></li>
   <li><%= link_to "Team", team_path %></li>
-  <li class="right">
-    <%= link_to "mailto:#{$ruvetia[:email]}" do %>
-      <i class="icon-envelope"></i>
-    <% end %>
-  </li>
-  <li class="right">
-    <%= link_to $ruvetia[:twitter], :target => :blank do %>
-      <i class="icon-twitter"></i>
-    <% end %>
-  </li>
-  <li class="right">
-    <%= link_to $ruvetia[:mailing_list], :target => :blank do %>
-      <i class="icon-comments-alt"></i>
-    <% end %>
-  </li>
-  <li class="right">
-    <%= link_to $ruvetia[:github], :target => :blank do %>
-      <i class="icon-github"></i>
-    <% end %>
-  </li>
+  <%= render "_shared/social_media_links", orientation: 'right', data: $ruvetia %>
 </ul>

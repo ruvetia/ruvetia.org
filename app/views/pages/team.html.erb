@@ -4,19 +4,9 @@
       <div class="member-image">
         <%= image_tag member.image_url, class: "avatar" %>
 
-        <div class="member-social-links">
-          <%= link_to member.social_media[:twitter] do %>
-            <i class="icon-twitter"></i>
-          <% end %>
-
-          <%= link_to member.social_media[:github] do %>
-            <i class="icon-github"></i>
-          <% end %>
-
-          <%= link_to member.social_media[:web] do %>
-            <i class="icon-globe"></i>
-          <% end %>
-        </div>
+        <ul class="member-social-links">
+          <%= render "_shared/social_media_links", data: member.social_media %>
+        </ul>
 
       </div>
 
