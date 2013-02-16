@@ -1,13 +1,13 @@
-<!-- this is only to show off the usage and needs to be converted into something more appealing. -->
-
-<div>
-  <h2>The Team</h2>
-  <ul class="team">
-    <% ruvetia_team.each do |member| %>
-      <li>
+<ul class="team">
+  <% ruvetia_team.each do |member| %>
+    <li>
+      <div class="member-image">
+        <%= image_tag member.image_url, class: "avatar" %>
+      </div>
+      <div class="member-info">
         <h3><%= member.name %></h3>
-        <%= image_tag member.image_url, :size => "#{member.image_size}x#{member.image_size}" %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+        <p><%= member.bio %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>
