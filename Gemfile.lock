@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/littlebtc/font-awesome-sass-rails.git
+  revision: cf8c91326e90793acc227184721225bcac61d066
+  specs:
+    font-awesome-sass-rails (3.0.2.1)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
+
+GIT
   remote: git://github.com/milgner/compass-rails.git
   revision: 1749c06f15dc4b058427e7969810457213647fb8
   ref: 1749c06f15dc4b058427e7969810457213647fb8
@@ -177,6 +185,7 @@ DEPENDENCIES
   capybara
   coffee-rails!
   compass-rails!
+  font-awesome-sass-rails!
   journey!
   jquery-rails
   rails (>= 4.0.0.beta)!
