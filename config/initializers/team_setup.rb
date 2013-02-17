@@ -4,15 +4,15 @@ $team = Team.new
 $team << Organizer.new('Yves Senn',
                        social_media: { github: 'http://github.com/senny', twitter: 'https://twitter.com/fistofsenn', web: 'http://blog.senny.ch' },
                        gravatar_hash: "3d698e2872c07061a455d9e250861235",
-                       bio: "Yves started experimenting with ruby in late 2007. Since then he worked on medium to large scale Rails applications with a strong focus on automated testing. He is actively contributing to Rails and other Open Source projects like spring and queue_classic.")
+                       bio: "Yves started experimenting with Ruby in late 2007. Since then he worked on medium to large scale Rails applications with a strong focus on automated testing. He is actively contributing to Rails and other Open Source projects like spring and queue_classic.")
 
 $team << Organizer.new('Rodrigo Haenggi',
-                       social_media: { github: 'http://github.com/therod', twitter: 'https://twitter.com/therod' },
+                       social_media: { github: 'http://github.com/therod', twitter: 'https://twitter.com/therod', web: 'http://rodrigohaenggi.com' },
                        gravatar_hash: "961ce8457830cbe5607fd365f134710c",
-                       bio: "")
+                       bio: "Rodrigo loves all things japanese - Ruby coming in on place three in his list, right after Anime and Matcha Tea. He has been programming since 2004, but only got really passionate about it after discovering Ruby and its wonderful community. He loves whiskey, and what could be better than sharing drinks with fellow Rubyists? J-pop, maybe?")
 
 $team << Organizer.new('Daniel Puglisi',
-                       social_media: { github: 'http://github.com/danielpuglisi', twitter: 'https://twitter.com/danielpuglisi' },
+                       social_media: { github: 'http://github.com/danielpuglisi', twitter: 'https://twitter.com/danielpuglisi', web: 'http://danielpuglisi.com' },
                        gravatar_hash: "34fd3386654f1b625e1d3b8b6c43a217",
                        bio: "Fascinated by Ruby's english like syntax, the Rails Framework and the awesome community behind it, Daniel decided to put Ruby into his design and programming toolbox. Ruvetia is his attempt to make Ruby more fundamental and popular in Switzerland and to spread the love about this beautiful programming language and its extraordinary people behind it.")
 
