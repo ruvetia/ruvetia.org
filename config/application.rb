@@ -37,5 +37,10 @@ module Ruvetia
 
     # Do not access db or load models while precompiling (required by heroku)
     config.assets.initialize_on_precompile = false
+
+    config.assets.precompile << lambda do |path, filename|
+      filename =~ /vendor\/assets/ && !%w(.js .css).include?(File.extname(path))
+    end
+
   end
 end
