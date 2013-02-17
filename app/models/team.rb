@@ -1,5 +1,9 @@
 class Team
 
+  def member(nick)
+    members.detect { |m| m.nick == nick }
+  end
+
   def members
     @members ||= []
   end

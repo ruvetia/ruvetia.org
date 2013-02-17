@@ -15,4 +15,13 @@
 
 <section class="more-info">
   <%= render "_shared/social_media_links", orientation: 'center', data: $ruvetia %>
+
+  <ul class="pseudo-footer">
+    <li>probably non-W3C compliant page design by <%= link_to "@therod", ruvetia_team.member(:therod).social_media[:twitter], target: :blank %></li>
+    <li>logo carefully handcrafted by <%= link_to "@danielpuglisi", ruvetia_team.member(:danielpuglisi).social_media[:twitter], target: :blank %></li>
+    <li>coded by the amazing <%= link_to "@fistofsenn", ruvetia_team.member(:senny).social_media[:twitter], target: :blank %></li>
+    <li>made with love</li>
+    <li>for you</li>
+    <li><3</li>
+  </ul>
 </section>

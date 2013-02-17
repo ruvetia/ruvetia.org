@@ -1,8 +1,9 @@
 class Organizer
 
-  attr_reader :name, :bio, :social_media
+  attr_reader :nick, :name, :bio, :social_media
 
-  def initialize(name, attributes = {})
+  def initialize(nick, name, attributes = {})
+    @nick = nick
     @name = name
     @bio = attributes[:bio]
     @social_media = attributes[:social_media]
