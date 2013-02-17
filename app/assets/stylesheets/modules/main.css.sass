@@ -1,68 +1,84 @@
 .main
-  padding: 80px 0
+  padding: 90px 0
 
-.main-logo
-  display: inline-block
-  width: 250px
-  vertical-align: top
-  overflow: hidden
+.fancy-divider
+  margin: 80px 0
+  border-top: 1px solid rgba(255,255,255, 0.4)
 
-#navigation-overlay
-  position: fixed
-  top: 0
-  height: 40px
-  min-width: 300px
-  margin-left: 280px
-  padding-top: 50px
-  padding-bottom: 0
-  padding-left: 20px
-  background-color: $red
-  width: 800px
-
-  .fadeout
-    height: 70px
-    padding-left: 20px
-    padding-bottom: 20px
-    width: 820px
-    margin-left: -5px
+  legend  
     width: auto
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(31%,rgba(228,0,0,1)), color-stop(71%,rgba(228,0,0,0.42)), color-stop(100%,rgba(228,0,0,0)))
+    display: block
+    -webkit-padding-start: 2px
+    -webkit-padding-end: 2px
+    margin: -20px auto 0 auto
+    padding: 7px
+    background-color: $red
+    font-size: 20px
+    font-weight: 300
 
-  .navigation
+section.logo
+  width: 250px
+  text-align: center
+  margin: 0 auto
 
-    ul
-      border-bottom: 1px solid #ccc
+  .logo-big
+    width: 250px
 
-    li
+section.intro-text
+
+  .signature
+    padding-bottom: 40px
+
+section.team
+  ul
+
+  li
+    padding: 0 0 40px 0
+
+    img.avatar
+      +border-radius(100%)
+      height: 130px
+      width: 130px
+
+    .member-image
+      text-align: center
+      position: relative
       display: inline-block
-      padding: 5px 5px 5px 5px
+      width: 130px
+      padding-top: 5px
+      vertical-align: top
+
+    .member-info
+      display: inline-block
+      padding-left: 40px
+      width: 625px
+      position: relative
+
+    .member-social-links
+      li
+        display: inline
+
+        a
+          text-decoration: none
+
+section.more-info
+  ul
+    text-align: center
+    li
+      display: inline
+      padding: 0 10px 0 10px
 
       a
         text-decoration: none
-        font-weight: 100
+        font-size: 44px
+        line-height: 52px
 
-#logo-overlay
-  position: fixed
-  top: 70px
-  height: 100%
+li
+  i
+    color: rgba(255,255,255, 1)
 
-  .logo
-    width: 250px
-    float: left
-    max-height: 100%
-    text-align: center
-
-#content
-  min-width: 300px
-  margin-left: 300px
-  margin-top: 80px
-
-.logo-big
-  width: 250px
-  margin-bottom: 20px
-
-.intro-text
-  padding-bottom: 120px
+    &:hover
+      color: rgba(0,0,0, 0.9)
 
 .social-media-links
   +horizontal-list

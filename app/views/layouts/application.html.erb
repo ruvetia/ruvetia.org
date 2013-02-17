@@ -8,6 +8,8 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <script type="text/javascript" src="//use.typekit.net/evq8nnx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
 
   <body>
@@ -15,24 +17,7 @@
       <div class="wrapper">
         <div class="main">
 
-          <div id="logo-overlay">
-            <div class="logo">
-              <%= image_tag "ruvetia-logo.png", class: "logo-big" %>
-              <h1>Ruvetia</h1>
-            </div>
-          </div>
-
-          <div id="navigation-overlay">
-            <div class="navigation">
-              <%= render 'layouts/navigation' %>
-            </div>
-            <div class="fadeout">
-            </div>
-          </div>
-
-          <div id="content">
-            <%= yield %>
-          </div>
+          <%= yield %>
 
         </div>
       </div>

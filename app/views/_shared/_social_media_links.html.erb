@@ -1,41 +1,43 @@
-<% orientation ||= "center" %>
+<ul>
+  <% orientation ||= "center" %>
 
-<% if data.has_key?(:email) %>
-  <li class="<%= orientation %>">
-    <%= link_to "mailto:#{data[:email]}" do %>
-      <i class="icon-envelope"></i>
-    <% end %>
-  </li>
-<% end %>
+  <% if data.has_key?(:email) %>
+    <li class="<%= orientation %>">
+      <%= link_to "mailto:#{data[:email]}" do %>
+        <i class="icon-envelope"></i>
+      <% end %>
+    </li>
+  <% end %>
 
-<% if data.has_key?(:twitter) %>
-  <li class="<%= orientation %>">
-    <%= link_to data[:twitter], :target => :blank do %>
-      <i class="icon-twitter"></i>
-    <% end %>
-  </li>
-<% end %>
+  <% if data.has_key?(:twitter) %>
+    <li class="<%= orientation %>">
+      <%= link_to data[:twitter], :target => :blank do %>
+        <i class="icon-twitter"></i>
+      <% end %>
+    </li>
+  <% end %>
 
-<% if data.has_key?(:mailing_list) %>
-  <li class="<%= orientation %>">
-    <%= link_to data[:mailing_list], :target => :blank do %>
-      <i class="icon-comments-alt"></i>
-    <% end %>
-  </li>
-<% end %>
+  <% if data.has_key?(:mailing_list) %>
+    <li class="<%= orientation %>">
+      <%= link_to data[:mailing_list], :target => :blank do %>
+        <i class="icon-comments-alt"></i>
+      <% end %>
+    </li>
+  <% end %>
 
-<% if data.has_key?(:github) %>
-  <li class="<%= orientation %>">
-    <%= link_to data[:github], :target => :blank do %>
-      <i class="icon-github"></i>
-    <% end %>
-  </li>
-<% end %>
+  <% if data.has_key?(:github) %>
+    <li class="<%= orientation %>">
+      <%= link_to data[:github], :target => :blank do %>
+        <i class="icon-github"></i>
+      <% end %>
+    </li>
+  <% end %>
 
-<% if data.has_key?(:web) %>
-  <li class="<%= orientation %>">
-    <%= link_to data[:web], :target => :blank do %>
-      <i class="icon-globe"></i>
-    <% end %>
-  </li>
-<% end %>
+  <% if data.has_key?(:web) %>
+    <li class="<%= orientation %>">
+      <%= link_to data[:web], :target => :blank do %>
+        <i class="icon-globe"></i>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
