@@ -1,20 +1,18 @@
-<div class="intro-text">
-  <p class="center">
-    <h2>Dear Rubyist</h2>
-  </p>
-  <p>
-    Are you living in Switzerland and like to program in Ruby?
-    Are you looking for like-minded people to exchange ideas,
-    engage in projects or just to have a beer? Look no further,
-    Ruvetia is the place to meet them.
-  </p>
-  <p>
-    We are a group of Developers looking to build a Swiss-wide community of Rubyists. Join the movement and attend our next meetup. Let your colleagues know about Ruvetia and if you want to bring Ruvetia to your city feel free to drop us a note.
-  </p>
-  <p>
-    Currently we will be communicating everything through the <%= link_to 'Google Group', $ruvetia[:mailing_list] %> so make sure to subscribe.
-  </p>
-  <p>
-    Feel free to drop us an <%= link_to 'Email', "mailto:#{$ruvetia[:email]}" %> if you want to get in contact with the organisers.
-  </p>
-</div>
+<section class="logo">
+  <%= image_tag "ruvetia-logo.png", class: "logo-big" %>
+  <h1>Ruvetia</h1>
+</section>
+
+<div class="fancy-divider"><legend id="intro"> Estd 2013 </legend></div>
+
+<%= render 'intro' %>
+
+<div class="fancy-divider"><legend id="team"> Meet the Team </legend></div>
+
+<%= render 'team' %>
+
+<div class="fancy-divider"><legend id="rest"> Everything else </legend></div>
+
+<section class="more-info">
+  <%= render "_shared/social_media_links", orientation: 'center', data: $ruvetia %>
+</section>
