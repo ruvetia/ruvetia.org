@@ -9,7 +9,7 @@ $team << Organizer.new(:senny, 'Yves Senn',
 $team << Organizer.new(:therod, 'Rodrigo Haenggi',
                        social_media: { github: 'http://github.com/therod', twitter: 'https://twitter.com/therod', web: 'http://rodrigohaenggi.com' },
                        gravatar_hash: "961ce8457830cbe5607fd365f134710c",
-                       bio: "Rodrigo loves all things japanese - Ruby coming in on place three in his list, right after Anime and Matcha Tea. He has been programming since 2004, but only got really passionate about it after discovering Ruby and its wonderful community. He loves whiskey, and what could be better than sharing drinks with fellow Rubyists? J-pop, maybe?")
+                       bio: "Rodrigo loves all things japanese - Ruby coming in on place three in his list, right after Anime and Matcha Tea. He has been programming since 2004, but only got really passionate about it after discovering Ruby and its wonderful community. He also loves whiskey, and what could be better than sharing a few drinks with fellow Rubyists? J-pop, maybe?")
 
 $team << Organizer.new(:danielpuglisi, 'Daniel Puglisi',
                        social_media: { github: 'http://github.com/danielpuglisi', twitter: 'https://twitter.com/danielpuglisi', web: 'http://danielpuglisi.com' },
