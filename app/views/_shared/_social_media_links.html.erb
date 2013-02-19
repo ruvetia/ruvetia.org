@@ -33,6 +33,14 @@
     </li>
   <% end %>
 
+  <% if value=data[:bitbucket] %>
+    <li class="<%= orientation %>">
+      <%= link_to value, :target => :blank do %>
+        <i class="icon-bitbucket"></i>
+      <% end %>
+    </li>
+  <% end %>
+
   <% if data.has_key?(:web) %>
     <li class="<%= orientation %>">
       <%= link_to data[:web], :target => :blank do %>
