@@ -8,6 +8,4 @@ Ruvetia::Application.routes.draw do
   end
 
   root :to => "pages#home"
-
-  get 'team', to: 'pages#team', as: 'team'
 end
