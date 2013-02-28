@@ -1,0 +1,10 @@
+<section class="meetups">
+  <ul>
+    <% ruvetia_meetups.each do |meetup| %>
+      <li>
+        <h3><%= meetup.title %></h3>
+        <p>Location: <%= meetup.location %></p>
+      </li>
+    <% end %>
+  </ul>
+ </section>
