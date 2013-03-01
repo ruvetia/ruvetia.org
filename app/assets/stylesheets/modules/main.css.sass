@@ -5,8 +5,8 @@
   margin: 100px 0 80px 0
   border-top: 1px solid rgba(255,255,255, 0.4)
 
-  legend  
-    width: 170px
+  legend
+    width: 200px
     text-align: center
     display: block
     -webkit-padding-start: 2px
@@ -29,6 +29,42 @@ section.intro-text
 
   .signature
     padding-bottom: 40px
+
+section.meetups
+  text-align: center
+  li
+    h3
+      font-size: 28px
+
+    .location
+      font-weight: bold
+    .meetup-meta
+      margin-bottom: 20px
+    .map
+      background: #fff
+      padding: 10px 10px 60px 10px
+      width: 450px
+      margin: 0 auto
+      +box-shadow($red - #444 0 1px 1px)
+
+    .map:before, .map:after
+      z-index: -2
+      position: absolute
+      width: 40%
+      height: 10px
+      content: ' '
+      left: 12px
+      bottom: 12px
+      background: transparent
+      +rotate(-5deg)
+      +skew(-5deg, -5deg)
+      +box-shadow(rgba(0,0,0,0.5) 0 18px 24px)
+
+    .map:after
+      left: auto
+      right: 12px
+      +rotate(5deg)
+      +skew(5deg, 5deg)
 
 section.team
   ul
