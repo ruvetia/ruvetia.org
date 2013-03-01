@@ -35,8 +35,10 @@ section.meetups
     text-align: center
   h3
     font-size: 27px
-  iframe
+  .map
     vertical-align: sub
+    width: 100%
+    height: 100%
 
 section.team
   ul
@@ -44,34 +46,34 @@ section.team
   li
     padding: 0 0 40px 0
 
-    img.avatar
-      +border-radius(100%)
-      height: 130px
-      width: 130px
+  img.avatar
+    +border-radius(100%)
+    height: 130px
+    width: 130px
 
-    .member-image
-      text-align: center
-      position: relative
-      display: inline-block
-      width: 130px
-      padding-top: 5px
-      vertical-align: top
+  .member-image
+    text-align: center
+    position: relative
+    display: inline-block
+    width: 130px
+    padding-top: 5px
+    vertical-align: top
 
-    .member-info
-      display: inline-block
-      padding-left: 40px
-      width: 625px
-      position: relative
+  .member-info
+    display: inline-block
+    padding-left: 40px
+    width: 625px
+    position: relative
 
-    .member-social-links
-      li
-        display: inline
+  .member-social-links
+    li
+      display: inline
 
-        a
-          text-decoration: none
+      a
+        text-decoration: none
 
-    &:last-child
-      padding-bottom: 0
+  &:last-child
+    padding-bottom: 0
 
 section.more-info
   ul
@@ -111,3 +113,56 @@ li
 
   a
     text-decoration: none
+
+@media (max-width: 1070px)
+
+  section.section
+    padding: 135px 0
+
+  section.logo
+    padding-bottom: 180px
+
+  section.team
+
+    img.avatar
+      width: 100%
+      height: auto
+
+    .member-image
+      width: 20%
+
+    .member-info
+      padding-left: 9%
+      width: 70%
+
+@media (max-width: 720px)
+
+  section.section
+    padding: 90px 0
+
+  section.logo
+    padding-bottom: 135px
+
+  section.meetups
+
+    height: 500px
+
+    .meetup-info
+      width: 76%
+      left: 10%
+      padding: 20px 2%
+      top: auto
+      bottom: 80px
+
+  section.team
+
+    img.avatar
+      width: 130px
+
+    .member-image
+      width: 100%
+
+    .member-info
+      width: 60%
+      padding: 0 20%
+      text-align: center
