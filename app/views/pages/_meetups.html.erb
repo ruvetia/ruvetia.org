@@ -1,15 +1,15 @@
 <ul>
   <% ruvetia_meetups.each do |meetup| %>
     <li>
-      <h3>
-        <%= meetup.title %>, <%= meetup.city %>
-      </h3>
-      <div class="meetup-meta">
-        <p><span class="date"><%= meetup.date %></span>, <span class="location"><%= meetup.location %></span></p>
+      <div class="meetup-info">
+        <h3>
+          <%= meetup.title %>, <%= meetup.city %>
+        </h3>
+        <div class="meetup-meta">
+          <p><span class="date"><%= meetup.date %></span>, <span class="location"><%= meetup.location %></span></p>
+        </div>
       </div>
-      <div class="map">
-        <%= map(meetup.map_src) %>
-      </div>
+      <%= map(meetup.map_src) %>
     </li>
   <% end %>
 </ul>

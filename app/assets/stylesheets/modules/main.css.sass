@@ -1,68 +1,59 @@
-.main
-  padding: 90px 0
+section.section
+  padding: 135px 0
 
-.fancy-divider
-  margin: 100px 0 80px 0
-  border-top: 1px solid rgba(255,255,255, 0.4)
+section.red
+  background: $red
+  color: #fff
 
-  legend
-    width: 200px
-    text-align: center
-    display: block
-    -webkit-padding-start: 2px
-    -webkit-padding-end: 2px
-    margin: -20px auto 0 auto
-    padding: 7px
-    background-color: $red
-    font-size: 20px
-    font-weight: 300
+section.white
+  background: #fff
+  color: #000
+  a
+    color: #000
 
 section.logo
   text-align: center
-
+  padding-bottom: 180px
   .logo-big
     width: 250px
 
 section.intro-text
-
   .signature
     padding-bottom: 40px
 
 section.meetups
-  text-align: center
-  li
-    h3
-      font-size: 28px
+  height: 500px
+  .meetup-info
+    padding: 50px
+    z-index: 1000
+    position: absolute
+    background: #000 /* fallback */
+    +background(rgba(0,0,0,0.8))
+    top: 50px
+    left: 200px
+    text-align: center
+  h3
+    font-size: 27px
+  iframe
+    vertical-align: sub
 
-    .location
-      font-weight: bold
-    .meetup-meta
-      margin-bottom: 20px
-    .map
-      background: #fff
-      padding: 10px 10px 60px 10px
-      width: 450px
-      margin: 0 auto
-      +box-shadow($red - #444 0 1px 1px)
-
-    .map:before, .map:after
-      z-index: -2
-      position: absolute
-      width: 40%
-      height: 10px
-      content: ' '
-      left: 12px
-      bottom: 12px
-      background: transparent
-      +rotate(-5deg)
-      +skew(-5deg, -5deg)
-      +box-shadow(rgba(0,0,0,0.5) 0 18px 24px)
-
-    .map:after
-      left: auto
-      right: 12px
-      +rotate(5deg)
-      +skew(5deg, 5deg)
+.fancy-divider
+  legend
+    width: 300px
+    text-align: center
+    display: block
+    margin: 0 auto
+    font-size: 20px
+    font-weight: 300
+    line-height: 0
+    background: #fff
+    color: #000
+    z-index: 999999
+    position: absolute
+    left: 50%
+    margin-left: -160px
+    margin-top: -20px
+    padding: 20px 10px
 
 section.team
   ul

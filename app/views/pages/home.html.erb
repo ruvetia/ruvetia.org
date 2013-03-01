@@ -1,4 +1,4 @@
-<section class="logo">
+<section class="logo section red">
   <div class="wrapper">
     <div class="inner">
       <%= image_tag "ruvetia-logo.png", class: "logo-big" %>
@@ -9,7 +9,7 @@
 
 <div class="fancy-divider"><legend id="intro"> Estd 2013 </legend></div>
 
-<section class="intro-text">
+<section class="intro-text section white">
   <div class="wrapper">
     <div class="inner">
       <%= render 'intro' %>
@@ -20,16 +20,12 @@
 <div class="fancy-divider"><legend id="team"> Upcoming Meetups </legend></div>
 
 <section class="meetups">
-  <div class="wrapper">
-    <div class="inner">
-      <%= render 'meetups' %>
-    </div>
-  </div>
+  <%= render 'meetups' %>
  </section>
 
 <div class="fancy-divider"><legend id="team"> Meet the Team </legend></div>
 
-<section class="team">
+<section class="team section white">
   <div class="wrapper">
     <div class="inner">
       <%= render 'team' %>
@@ -39,7 +35,7 @@
 
 <div class="fancy-divider"><legend id="rest"> Everything else </legend></div>
 
-<section class="more-info">
+<section class="more-info section red">
   <div class="wrapper">
     <div class="inner">
       <%= render "_shared/social_media_links", orientation: 'center', data: $ruvetia %>
