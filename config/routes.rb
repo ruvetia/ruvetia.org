@@ -8,4 +8,7 @@ Ruvetia::Application.routes.draw do
   end
 
   root :to => "pages#home"
+
+  get '/auth/github/new', to: "auth/github#new", as: :attend_with_github
+  get '/auth/github/create', to: "auth/github#create"
 end

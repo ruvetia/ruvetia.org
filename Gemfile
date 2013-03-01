@@ -8,6 +8,7 @@ gem 'arel',      github: 'rails/arel'
 # should work without them
 # gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
 
+gem 'oauth2'
 gem 'pg'
 
 group :assets do
