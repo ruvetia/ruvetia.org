@@ -1,31 +1,53 @@
-<section class="logo">
-  <%= image_tag "ruvetia-logo.png", class: "logo-big" %>
-  <h1>Ruvetia</h1>
+<section class="logo section red">
+  <div class="wrapper">
+    <div class="inner">
+      <%= image_tag "ruvetia-logo.png", class: "logo-big" %>
+      <h1>Ruvetia</h1>
+    </div>
+  </div>
 </section>
 
-<div class="fancy-divider"><legend id="intro"> Estd 2013 </legend></div>
+<%= ribbon("Estd 2013", class: "mixed-1") %>
 
-<%= render 'intro' %>
+<section class="intro-text section white">
+  <div class="wrapper">
+    <div class="inner">
+      <%= render 'intro' %>
+    </div>
+  </div>
+</section>
 
-<div class="fancy-divider"><legend id="team"> Upcoming Meetups </legend></div>
+<%= ribbon("Upcoming Meetups", class: "top") %>
 
-<%= render 'meetups' %>
+<section class="meetups">
+  <%= render 'meetups' %>
+ </section>
 
-<div class="fancy-divider"><legend id="team"> Meet the Team </legend></div>
+<%= ribbon("Meet the Team", class: "bottom") %>
 
-<%= render 'team' %>
+<section class="team section white">
+  <div class="wrapper">
+    <div class="inner">
+      <%= render 'team' %>
+    </div>
+  </div>
+</section>
 
-<div class="fancy-divider"><legend id="rest"> Everything else </legend></div>
+<%= ribbon("Everything else", class: "mixed-2") %>
 
-<section class="more-info">
-  <%= render "_shared/social_media_links", orientation: 'center', data: $ruvetia %>
+<section class="more-info section red">
+  <div class="wrapper">
+    <div class="inner">
+      <%= render "_shared/social_media_links", orientation: 'center', data: $ruvetia %>
 
-  <ul class="pseudo-footer">
-    <li>probably non-W3C compliant page design by <%= link_to "@therod", ruvetia_team.member(:therod).social_media[:twitter], target: :blank %></li>
-    <li>logo carefully handcrafted by <%= link_to "@danielpuglisi", ruvetia_team.member(:danielpuglisi).social_media[:twitter], target: :blank %></li>
-    <li>coded by the amazing <%= link_to "@fistofsenn", ruvetia_team.member(:senny).social_media[:twitter], target: :blank %></li>
-    <li>made with love</li>
-    <li>for you</li>
-    <li><3</li>
-  </ul>
+      <ul class="pseudo-footer">
+        <li>probably non-W3C compliant page design by <%= link_to "@therod", ruvetia_team.member(:therod).social_media[:twitter], target: :blank %></li>
+        <li>logo carefully handcrafted by <%= link_to "@danielpuglisi", ruvetia_team.member(:danielpuglisi).social_media[:twitter], target: :blank %></li>
+        <li>coded by the amazing <%= link_to "@fistofsenn", ruvetia_team.member(:senny).social_media[:twitter], target: :blank %></li>
+        <li>made with love</li>
+        <li>for you</li>
+        <li><3</li>
+      </ul>
+    </div>
+  </div>
 </section>

@@ -1,0 +1,147 @@
+.fancy-divider
+  font-weight: 900
+  line-height: 0
+  color: #f7f7f7
+  width: 340px
+  z-index: 999999
+  position: absolute
+  left: 50%
+  margin-left: -170px
+  margin-top: -30px
+  font-size: 24px
+  text-align: center
+  +text-shadow($gray - #333 0 -1px 1px)
+
+/* ribbon style */
+
+.ribbon-wrapper
+
+  .ribbon-front
+    background: $gray
+    width: 300px
+    padding: 30px 15px
+    position: relative
+    z-index: 2
+
+  .ribbon-front,
+  .ribbon-back-left,
+  .ribbon-back-right
+    +box-shadow(rgba(0,0,0,0.5) 0 0 3px)
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright
+    position: absolute
+    z-index: 1
+    border-style: solid
+    height: 0px
+    width: 0px
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright
+
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright
+    top: 60px
+
+  .ribbon-edge-bottomleft
+    border-color: transparent $gray - #222 transparent transparent
+
+  .ribbon-edge-topleft
+    border-width: 0
+
+  .ribbon-edge-bottomleft
+    border-width: 0 10px 5px 0
+
+  .ribbon-edge-bottomright
+    left: 320px
+    border-color: transparent transparent transparent $gray - #222
+
+  .ribbon-edge-topright
+    border-width: 0
+
+  .ribbon-edge-bottomright
+    border-width: 0 0 5px 10px
+
+  .ribbon-back-left
+    position: absolute
+    top: 15px
+    left: -40px
+    width: 50px
+    height: 50px
+    background-color: $gray
+    z-index: 0
+
+  .ribbon-back-right
+    position: absolute
+    top: 15px
+    right: -30px
+    width: 50px
+    height: 50px
+    background-color: $gray
+    z-index: 0
+
+.ribbon-mixed-1
+
+  .ribbon-edge-topleft
+    border-color: transparent $gray - #222 transparent transparent
+
+  .ribbon-edge-topleft
+    top: -5px
+    border-width: 5px 10px 0 0
+
+  .ribbon-edge-bottomleft
+    border-width: 0
+
+  .ribbon-back-left
+    top: -5px
+
+.ribbon-mixed-2
+
+  .ribbon-edge-topright
+    left: 320px
+    border-color: transparent transparent transparent $gray - #222
+
+  .ribbon-edge-topright
+    top: -5px
+    border-width: 5px 0 0 10px
+
+  .ribbon-edge-bottomright
+    border-width: 0
+
+  .ribbon-back-right
+    top: -5px
+
+.ribbon-top
+  margin-top: -17px
+
+.ribbon-bottom
+  margin-top: 17px
+
+  .ribbon-edge-topleft
+    border-color: transparent $gray - #222 transparent transparent
+
+  .ribbon-edge-topleft
+    top: -5px
+    border-width: 5px 10px 0 0
+
+  .ribbon-edge-bottomleft
+    border-width: 0
+
+  .ribbon-edge-topright
+    left: 320px
+    border-color: transparent transparent transparent $gray - #222
+
+  .ribbon-edge-topright
+    top: -5px
+    border-width: 5px 0 0 10px
+
+  .ribbon-edge-bottomright
+    border-width: 0
+
+  .ribbon-back-left
+    top: -5px
+
+  .ribbon-back-right
+    top: -5px

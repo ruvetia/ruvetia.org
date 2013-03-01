@@ -1,17 +1,15 @@
-<section class="meetups">
-  <ul>
-    <% ruvetia_meetups.each do |meetup| %>
-      <li>
+<ul>
+  <% ruvetia_meetups.each do |meetup| %>
+    <li>
+      <div class="meetup-info">
         <h3>
           <%= meetup.title %>, <%= meetup.city %>
         </h3>
         <div class="meetup-meta">
           <p><span class="date"><%= meetup.date %></span>, <span class="location"><%= meetup.location %></span></p>
         </div>
-        <div class="map">
-          <%= map(meetup.map_src) %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
- </section>
+      </div>
+      <%= map(meetup.map_src) %>
+    </li>
+  <% end %>
+</ul>
