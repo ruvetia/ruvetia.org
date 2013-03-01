@@ -12,6 +12,13 @@
   text-align: center
   +text-shadow($gray - #333 0 -1px 1px)
 
+@media (max-width: 720px)
+  .fancy-divider
+    width: 50%
+    margin-left: -25%
+    font-size: 16px
+    white-space: nowrap
+
 /* ribbon style */
 
 .ribbon-wrapper
@@ -64,23 +71,19 @@
   .ribbon-edge-bottomright
     border-width: 0 0 5px 10px
 
-  .ribbon-back-left
+  .ribbon-back-left, .ribbon-back-right
     position: absolute
     top: 15px
-    left: -40px
     width: 50px
     height: 50px
     background-color: $gray
     z-index: 0
 
+  .ribbon-back-left
+    left: -40px
+
   .ribbon-back-right
-    position: absolute
-    top: 15px
     right: -30px
-    width: 50px
-    height: 50px
-    background-color: $gray
-    z-index: 0
 
 .ribbon-mixed-1
 
@@ -114,10 +117,10 @@
     top: -5px
 
 .ribbon-top
-  margin-top: -17px
+  margin-top: -10px
 
 .ribbon-bottom
-  margin-top: 17px
+  margin-top: 10px
 
   .ribbon-edge-topleft
     border-color: transparent $gray - #222 transparent transparent
@@ -145,3 +148,18 @@
 
   .ribbon-back-right
     top: -5px
+
+@media (max-width: 720px)
+
+  .ribbon-wrapper
+    .ribbon-front
+      width: 90%
+      padding: auto 5%
+
+    .ribbon-back-right
+      right: -40px
+
+    .ribbon-edge-bottomright, .ribbon-edge-topright
+      left: auto
+      right: -40px
+      margin-right: 40px
