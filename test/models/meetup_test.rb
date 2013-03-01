@@ -25,7 +25,7 @@ class MeetupTest < ActiveSupport::TestCase
 
   test "the default location is unknown" do
     drinkup = Meetup.new
-    assert_equal '<<to be announced>>', drinkup.location
+    assert_equal 'TBA', drinkup.location
   end
 
 end
