@@ -1,105 +1,94 @@
-.main
-  padding: 90px 0
+section.section
+  padding: 180px 0
 
-.fancy-divider
-  margin: 100px 0 80px 0
-  border-top: 1px solid rgba(255,255,255, 0.4)
+section.red
+  background: $red
+  color: #fff
+  a
+    color: #fff
+    &:hover
+      color: #000
+  i
+    color: #fff
+    &:hover
+      color: #000
 
-  legend
-    width: 200px
-    text-align: center
-    display: block
-    -webkit-padding-start: 2px
-    -webkit-padding-end: 2px
-    margin: -20px auto 0 auto
-    padding: 7px
-    background-color: $red
-    font-size: 20px
-    font-weight: 300
+section.white
+  background: #fff
+  color: #000
+  a
+    color: #000
+    &:hover
+      color: $red
+  i
+    color: #000
+    &:hover
+      color: $red
 
 section.logo
-  width: 250px
   text-align: center
-  margin: 0 auto
-
+  padding-bottom: 225px
   .logo-big
     width: 250px
 
 section.intro-text
-
   .signature
     padding-bottom: 40px
 
 section.meetups
-  text-align: center
-  li
-    h3
-      font-size: 28px
 
-    .location
-      font-weight: bold
-    .meetup-meta
-      margin-bottom: 20px
-    .map
-      background: #fff
-      padding: 10px 10px 60px 10px
-      width: 450px
-      margin: 0 auto
-      +box-shadow($red - #444 0 1px 1px)
+  height: 700px
 
-    .map:before, .map:after
-      z-index: -2
-      position: absolute
-      width: 40%
-      height: 10px
-      content: ' '
-      left: 12px
-      bottom: 12px
-      background: transparent
-      +rotate(-5deg)
-      +skew(-5deg, -5deg)
-      +box-shadow(rgba(0,0,0,0.5) 0 18px 24px)
-
-    .map:after
-      left: auto
-      right: 12px
-      +rotate(5deg)
-      +skew(5deg, 5deg)
+  .meetup-info
+    width: 300px
+    padding: 50px
+    z-index: 1000
+    position: absolute
+    background: #000 /* fallback */
+    top: 100px
+    left: 10%
+    text-align: center
+    +background(rgba(0,0,0,0.8))
+  h3
+    font-size: 27px
+  .map
+    vertical-align: sub
+    width: 100%
+    height: 100%
 
 section.team
-  ul
 
   li
     padding: 0 0 40px 0
 
-    img.avatar
-      +border-radius(100%)
-      height: 130px
-      width: 130px
+  img.avatar
+    +border-radius(100%)
+    height: 130px
+    width: 130px
 
-    .member-image
-      text-align: center
-      position: relative
-      display: inline-block
-      width: 130px
-      padding-top: 5px
-      vertical-align: top
+  .member-image
+    text-align: center
+    position: relative
+    display: inline-block
+    width: 130px
+    padding-top: 5px
+    vertical-align: top
 
-    .member-info
-      display: inline-block
-      padding-left: 40px
-      width: 625px
-      position: relative
+  .member-info
+    display: inline-block
+    padding-left: 40px
+    width: 625px
+    position: relative
 
-    .member-social-links
-      li
-        display: inline
+  .member-social-links
+    li
+      display: inline
 
-        a
-          text-decoration: none
+      a
+        text-decoration: none
 
-    &:last-child
-      padding-bottom: 0
+  &:last-child
+    padding-bottom: 0
 
 section.more-info
   ul
@@ -127,15 +116,61 @@ section.more-info
         line-height: 26px
         text-decoration: underline
 
-li
-  i
-    color: rgba(255,255,255, 1)
-
-    &:hover
-      color: rgba(0,0,0, 0.9)
 
 .social-media-links
   +horizontal-list
-
   a
     text-decoration: none
+
+@media (max-width: 1070px)
+
+  section.section
+    padding: 135px 0
+
+  section.logo
+    padding-bottom: 180px
+
+  section.team
+
+    img.avatar
+      width: 100%
+      height: auto
+
+    .member-image
+      width: 20%
+
+    .member-info
+      padding-left: 9%
+      width: 70%
+
+@media (max-width: 720px)
+
+  section.section
+    padding: 90px 0
+
+  section.logo
+    padding-bottom: 135px
+
+  section.meetups
+
+    height: 500px
+
+    .meetup-info
+      width: 76%
+      left: 10%
+      padding: 20px 2%
+      top: auto
+      bottom: 80px
+
+  section.team
+
+    img.avatar
+      width: 130px
+
+    .member-image
+      width: 100%
+
+    .member-info
+      width: 60%
+      padding: 0 20%
+      text-align: center
