@@ -5,7 +5,7 @@ class Meetup
   def initialize(attributes = {})
     @title = attributes[:title]
     @city = attributes[:city]
-    @location = attributes.fetch(:location, 'Raeuberbar')
+    @location = attributes.fetch(:location, '<<to be announced>>')
     @time = attributes[:time].to_time if attributes[:time]
     @map_src = attributes[:map_src]
   end
