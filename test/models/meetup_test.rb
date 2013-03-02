@@ -33,4 +33,15 @@ class MeetupTest < ActiveSupport::TestCase
     assert_equal 'TBA', drinkup.location
   end
 
+  test "members participate in meetups" do
+    meetup = Meetup.new(number: 83)
+    john = Member.create!(name: "John")
+    jane = Member.create!(name: "Jane")
+    jane.attend(83)
+
+    assert_equal [jane], meetup.participants
+    john.attend(83)
+    assert_equal [jane, john], meetup.participants
+  end
+
 end

@@ -14,4 +14,8 @@ class Meetup
   def date
     @time.strftime('%d. %B, %H:%M Uhr')
   end
+
+  def participants
+    Member.joins(:participations).where('meetup_number = ?', @number).uniq.order('participations.created_at')
+  end
 end
