@@ -10,6 +10,10 @@ class Member < ActiveRecord::Base
     # nothing happens if you are already attending
   end
 
+  def cancel(meetup_number)
+    participations.where(meetup_number: meetup_number).first.destroy
+  end
+
   def attends?(meetup_number)
     participations.pluck(:meetup_number).include? meetup_number.to_i
   end

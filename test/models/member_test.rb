@@ -23,6 +23,15 @@ class MemberTest < ActiveSupport::TestCase
     ferdinand.attend(7) # does not raise an exception
   end
 
+  test "can cancel a participation in a meetup" do
+    ferdinand = Member.create(name: "Ferdinand")
+    ferdinand.attend(8)
+
+    assert ferdinand.attends?(8)
+    ferdinand.cancel(8)
+    assert_not ferdinand.attends?(8)
+  end
+
   test "can be created from github's user data" do
     data = {
             "id" => 2384,

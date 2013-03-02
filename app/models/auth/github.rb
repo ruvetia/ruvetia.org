@@ -8,7 +8,7 @@ module Auth
     end
 
     def access_token(code)
-      token = client.auth_code.get_token(code)
+      client.auth_code.get_token(code)
     end
 
     def user_data(token)
@@ -31,7 +31,7 @@ module Auth
     end
 
     def callback_url
-      'http://ruvetia.org/auth/github/create'
+      ENV['GITHUB_CALLBACK'] || 'http://localhost:3000/auth/github/create'
     end
   end
 end

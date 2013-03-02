@@ -7,6 +7,20 @@
         </h3>
         <div class="meetup-meta">
           <p><span class="date"><%= meetup.date %></span>, <span class="location"><%= meetup.location %></span></p>
+          <% if signed_in? %>
+            <% if !current_user.attends?(meetup.number) %>
+              <%= link_to "I will be there!", attend_path(meetup.number), method: :put %>
+            <% else %>
+              <%= link_to "I can't make it!", cancel_path(meetup.number), method: :delete %>
+            <% end %>
+          <% else %>
+            <%= link_to "Sign in using Github", auth_github_path(meetup: meetup.number) %>
+          <% end %>
+          <ul class="meetup-participants">
+            <% meetup.participants.each do |participant| %>
+              <li><%= participant.name %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
       <%= map(meetup.map_src) %>
