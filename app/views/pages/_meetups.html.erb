@@ -20,11 +20,12 @@
           <% end %>
         </div>
         <div class="meetup-participants">
-          <ul>
-            <% meetup.participants.each do |participant| %>
-              <li><%= participant.name %></li>
-            <% end %>
-          </ul>
+          <%= pluralize(meetup.participants.count, "rubyist") %> will attend
+          <%# <ul> %>
+          <%#   <% meetup.participants.each do |participant| %1> %>
+          <%#     <li><%= participant.name %1></li> %>
+          <%#   <% end %1> %>
+          <%# </ul> %>
         </div>
       </div>
       <%= map(meetup.map_src) %>
