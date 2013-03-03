@@ -3,11 +3,15 @@ master:
   heroku_app: "ruvetia-master"
   app_url: "http://ruvetia.org"
   heroku_config:
-    # Future Heroku configuration is done in here using ENV variables.
+    ruvetia_github_token: <%= ENV['RUVETIA_MASTER_GITHUB_TOKEN'] %>
+    ruvetia_github_secret: <%= ENV['RUVETIA_MASTER_GITHUB_SECRET'] %>
+    ruvetia_github_callback: <%= ENV['RUVETIA_MASTER_GITHUB_CALLBACK'] %>
 
 staging:
   heroku_remote: "git@heroku.com:ruvetia-staging.git"
   heroku_app: "ruvetia-staging"
   app_url: "http://ruvetia-staging.herokuapp.com"
   heroku_config:
-    # Future Heroku configuration is done in here using ENV variables.
+    ruvetia_github_token: <%= ENV['RUVETIA_STAGING_GITHUB_TOKEN'] %>
+    ruvetia_github_secret: <%= ENV['RUVETIA_STAGING_GITHUB_SECRET'] %>
+    ruvetia_github_callback: <%= ENV['RUVETIA_STAGING_GITHUB_CALLBACK'] %>

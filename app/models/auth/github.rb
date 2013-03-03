@@ -16,8 +16,8 @@ module Auth
     end
 
     def client
-      OAuth2::Client.new('1420b9f1c974a8c0cf1f',
-                         ENV['GITHUB_SECRET'],
+      OAuth2::Client.new(ENV['RUVETIA_GITHUB_TOKEN'],
+                         ENV['RUVETIA_GITHUB_SECRET'],
                          {
                           site: 'https://api.github.com',
                           authorize_url: 'https://github.com/login/oauth/authorize',
@@ -31,7 +31,7 @@ module Auth
     end
 
     def callback_url
-      ENV['GITHUB_CALLBACK'] || 'http://localhost:3000/auth/github/create'
+      ENV['RUVETIA_GITHUB_CALLBACK'] || 'http://localhost:3000/auth/github/create'
     end
   end
 end
