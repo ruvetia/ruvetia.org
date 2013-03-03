@@ -11,8 +11,12 @@ class MeetupPageTest < ActionDispatch::IntegrationTest
 
   test "you can attend a meetup using github" do
     visit '/'
-    click_link "Sign in using Github"
-    click_link "I will be there!"
+    within(".meetup-signup") do
+      click_link "Sign in using GitHub"
+    end
+    within(".meetup-signup") do
+      click_link "I will be there!"
+    end
 
     assert_equal 1, Member.count
     assert_equal 1, Participation.count
@@ -26,8 +30,12 @@ class MeetupPageTest < ActionDispatch::IntegrationTest
     max.attend(1)
 
     visit '/'
-    click_link "Sign in using Github"
-    click_link "I can't make it!"
+    within(".meetup-signup") do
+      click_link "Sign in using GitHub"
+    end
+    within(".meetup-signup") do
+      click_link "I can't make it!"
+    end
 
     assert_equal 1, Member.count
     assert_equal 0, Participation.count

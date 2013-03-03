@@ -16,7 +16,7 @@
               <%= link_to "I can't make it!", cancel_path(meetup.number), method: :delete, class: "btn" %>
             <% end %>
           <% else %>
-            <%= link_to "Sign in using Github", auth_github_path(meetup: meetup.number), class: "btn" %>
+            <%= link_to "Sign in using GitHub", auth_github_path(meetup: meetup.number), class: "btn" %>
           <% end %>
         </div>
         <div class="meetup-participants">

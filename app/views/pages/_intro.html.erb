@@ -16,3 +16,8 @@
 <p>
   Feel free to drop us an <%= link_to 'Email', "mailto:#{$ruvetia[:email]}" %> if you want to get in contact with the organisers.
 </p>
+<% unless signed_in? %>
+  <div style="margin-top: 60px">
+  <%= link_to "Join / Sign in using GitHub", auth_github_path, class: "btn btn-join"  %>
+  </div>
+<% end %>
