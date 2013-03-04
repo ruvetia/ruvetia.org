@@ -8,6 +8,25 @@
         <div class="meetup-meta">
           <p><span class="date"><%= meetup.date %></span>, <span class="location"><%= meetup.location %></span></p>
         </div>
+        <div class="meetup-signup">
+          <% if signed_in? %>
+            <% if !current_user.attends?(meetup.number) %>
+              <%= link_to "I will be there!", attend_path(meetup.number), method: :put, class: "btn" %>
+            <% else %>
+              <%= link_to "I can't make it!", cancel_path(meetup.number), method: :delete, class: "btn" %>
+            <% end %>
+          <% else %>
+            <%= link_to "Sign in using GitHub", auth_github_path(meetup: meetup.number), class: "btn" %>
+          <% end %>
+        </div>
+        <div class="meetup-participants">
+          <%= pluralize(meetup.participants.count, "rubyist") %> will attend
+          <%# <ul> %>
+          <%#   <% meetup.participants.each do |participant| %1> %>
+          <%#     <li><%= participant.name %1></li> %>
+          <%#   <% end %1> %>
+          <%# </ul> %>
+        </div>
       </div>
       <%= map(meetup.map_src) %>
     </li>

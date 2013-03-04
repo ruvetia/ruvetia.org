@@ -8,4 +8,10 @@ Ruvetia::Application.routes.draw do
   end
 
   root :to => "pages#home"
+
+  get '/auth/github/new', to: "auth/github#new", as: :auth_github
+  get '/auth/github/create', to: "auth/github#create"
+
+  put '/attend/:meetup', to: "participations#create", as: :attend
+  delete '/cancel/:meetup', to: "participations#destroy", as: :cancel
 end
