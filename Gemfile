@@ -8,6 +8,9 @@ gem 'arel',      github: 'rails/arel'
 # should work without them
 # gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
 
+gem 'oauth2'
+gem 'pg'
+
 group :assets do
   gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
   gem 'sprockets-rails', github: 'rails/sprockets-rails'
@@ -23,6 +26,10 @@ end
 
 group :test do
   gem 'capybara'
+end
+
+group :development do
+  gem 'sqlite3'
 end
 
 gem 'jquery-rails'

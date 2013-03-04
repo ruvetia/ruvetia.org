@@ -6,7 +6,7 @@ require File.expand_path('../boot', __FILE__)
 require "rails"
 
 [
-  # 'active_record',
+  'active_record',
   'action_controller',
   # 'action_mailer',
   'rails/test_unit',
