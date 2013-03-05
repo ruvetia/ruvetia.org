@@ -24,7 +24,7 @@ class Member < ActiveRecord::Base
 
   def self.from_github_data(token, data)
     user = find_by_github_id(data["id"])
-    user ||= Member.create!(name: data["name"],
+    user ||= Member.create!(name: data.fetch("name", data["login"]),
                             email: data["email"],
                             github_id: data["id"],
                             github_login: data["login"],
