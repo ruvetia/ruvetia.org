@@ -28,8 +28,4 @@ group :test do
   gem 'capybara'
 end
 
-group :development do
-  gem 'sqlite3'
-end
-
 gem 'jquery-rails'
