@@ -50,6 +50,20 @@ class MemberTest < ActiveSupport::TestCase
     assert_equal token, member.github_oauth_token
   end
 
+  test "can be created when no name is specified on github" do
+    data = {
+            "id" => 2384,
+            "login" => "danielpuglisi",
+            "email" => "daniel.puglisi@gmx.net",
+           }
+    token = "asjd23akjdh191hd938h8hf84"
+    member = Member.from_github_data(token, data)
+
+    assert_not member.new_record?
+    assert_equal "danielpuglisi", member.github_login
+    assert_equal "danielpuglisi", member.name
+  end
+
   test "does not create duplicate users" do
     Member.create(name: "Rodrigo", github_id: 378)
 
