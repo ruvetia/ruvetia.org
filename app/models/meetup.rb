@@ -16,6 +16,10 @@ class Meetup
   end
 
   def participants
-    Member.joins(:participations).where('meetup_number = ?', @number).uniq.order('participations.created_at')
+    Member.joins(:participations).
+      select('members.*, participations.created_at').
+      where('meetup_number = ?', @number).
+      uniq.
+      order('participations.created_at')
   end
 end
