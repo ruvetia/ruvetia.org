@@ -2,6 +2,7 @@ language: ruby
 rvm:
   - 1.9.3
 script:
+  - psql -c 'create database ruvetia_test;' -U postgres
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rake

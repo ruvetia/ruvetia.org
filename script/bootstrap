@@ -18,8 +18,22 @@ puts ""
 #
 # lol constants
 #
-HEROKU_PRODUCTION = "ruvetia-master"
-HEROKU_STAGING = "ruvetia-staging"
+DB_USERNAME = "postgres"
+DB_PASSWORD = ""
+DB_HOST = "localhost"
+TEST_DATABASE = "ruvetia_test"
+DEV_DATABASE = "ruvetia_development"
+
+#
+# Check for PostgreSQL
+#
+unless system("which psql 2>&1 > /dev/null")
+  puts "x You need to install PostgreSQL. If you use Homebrew, you can run:"
+  puts "  => brew install postgresql"
+  exit(1)
+else
+  puts "+ PostgreSQL found."
+end
 
 #
 # Check for Bundler
@@ -44,11 +58,65 @@ else
 end
 
 #
-# Lets install some bundles
+# Prepare Database
+#
+puts ""
+puts "Should we set up the dev & test Databases for you?"
+puts "WARNING: This will destroy existing databases named '#{DEV_DATABASE}'and '#{TEST_DATABASE}'!"
+print "(y)es, (n)o  =>  "
+
+case gets.strip
+  when 'Y', 'y', 'yes'
+    puts ""
+    puts "Dropping all connections to #{DEV_DATABASE}..."
+    system(%Q{psql postgres #{DB_USERNAME} --command="SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname='#{DEV_DATABASE}';" >> log/bootstrap.log})
+
+    puts "Deleting old #{DEV_DATABASE}..."
+    system("dropdb #{DEV_DATABASE} --username=#{DB_USERNAME} >> log/bootstrap.log")
+
+    puts "Creating #{DEV_DATABASE}..."
+    system("createdb --owner=#{DB_USERNAME} --username=#{DB_USERNAME} #{DEV_DATABASE} >> log/bootstrap.log")
+
+    puts "Migrating #{DEV_DATABASE}..."
+    system("rake db:migrate >> log/bootstrap.log")
+
+    puts "Seeding #{DEV_DATABASE}..."
+    system("rake db:seed >> log/bootstrap.log")
+
+    puts "Deleting old #{TEST_DATABASE}..."
+    system("dropdb #{TEST_DATABASE} --username=#{DB_USERNAME} >> log/bootstrap.log")
+
+    puts "Creating #{TEST_DATABASE}..."
+    system("createdb --owner=#{DB_USERNAME} --username=#{DB_USERNAME} #{TEST_DATABASE} >> log/bootstrap.log")
+
+    puts "Preparing #{TEST_DATABASE}..."
+    system("rake db:test:prepare >> log/bootstrap.log")
+    system("rake db:test:load >> log/bootstrap.log")
+
+    puts ""
+    puts "DATABASES ARE READY!"
+end
+
+#
+# Let's install some bundles
 #
 puts ""
 puts "Installing bundles..."
 system("bundle install >> log/bootstrap.log")
+
+#
+# Restart the Rails Server if it is running (for pow users)
+#
+puts ""
+puts "Restarting app..."
+system("touch tmp/restart.txt")
+
+#
+# RUN EM TESTS
+#
+puts ""
+puts "Running tests..."
+system("bundle exec rake test")
 
 #
 # DONE
