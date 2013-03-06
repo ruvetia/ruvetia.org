@@ -6,7 +6,7 @@
           <%= meetup.title %>, <%= meetup.city %>
         </h3>
         <div class="meetup-meta">
-          <p><span class="date"><%= meetup.date %></span>, <span class="location"><%= meetup.location %></span></p>
+          <p><span class="date"><%= meetup.date %></span>, <span class="location"><%= link_to meetup.location, meetup.map_src, target: "blank" %></span></p>
         </div>
         <div class="meetup-signup">
           <% if signed_in? %>
