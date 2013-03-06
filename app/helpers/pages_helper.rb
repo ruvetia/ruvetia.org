@@ -1,6 +1,6 @@
 module PagesHelper
   def map(src)
-    raw "<iframe class='map' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='#{src}&amp;output=embed&amp;iwloc=near'></iframe>"
+    raw "<iframe class='map' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='#{src}&amp;output=embed&amp;'></iframe>"
   end
 
   def ribbon(text, options={})
