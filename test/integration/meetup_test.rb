@@ -6,17 +6,13 @@ class MeetupPageTest < ActionDispatch::IntegrationTest
   test "the home displays the upcomming meetups" do
     visit '/'
     meetups = page.all('.meetups li h3').map(&:text)
-    assert_equal ['Ruvetia #1, Bern'], meetups
+    assert_equal ['Ruvetia #2, Basel'], meetups
   end
 
   test "you can attend a meetup using github" do
     visit '/'
-    within(".meetup-signup") do
-      click_link "Sign in using GitHub"
-    end
-    within(".meetup-signup") do
-      click_link "I will be there!"
-    end
+    sign_in_with_github
+    attend_upcoming_meetup
 
     assert_equal 1, Member.count
     assert_equal 1, Participation.count
@@ -26,13 +22,11 @@ class MeetupPageTest < ActionDispatch::IntegrationTest
   end
 
   test "you can cancel a meetup participation" do
-    max = create_member!
-    max.attend(1)
+    create_member!
 
     visit '/'
-    within(".meetup-signup") do
-      click_link "Sign in using GitHub"
-    end
+    sign_in_with_github
+    attend_upcoming_meetup
     within(".meetup-signup") do
       click_link "I can't make it!"
     end
@@ -42,5 +36,18 @@ class MeetupPageTest < ActionDispatch::IntegrationTest
 
     visible_participants = page.all('.meetups .meetup-participants li')
     assert_equal [], visible_participants.map(&:text)
+  end
+
+  private
+  def sign_in_with_github
+    within(".meetup-signup") do
+      click_link "Sign in using GitHub"
+    end
+  end
+
+  def attend_upcoming_meetup
+    within(".meetup-signup") do
+      click_link "I will be there!"
+    end
   end
 end
