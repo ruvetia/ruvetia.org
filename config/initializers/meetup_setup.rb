@@ -1,4 +1,12 @@
+# -*- coding: utf-8 -*-
 $meetups = [
+            Meetup.new(
+                       number: 2,
+                       city: "Basel",
+                       location: "TBA",
+                       time: "03.05.2013  18:00",
+                       map_src: "https://maps.google.ch/maps?q=Basel&hl=de&sll=46.878968,8.223267&sspn=2.414281,5.136108&hnear=Basel,+Basel-Stadt&t=m&z=16"
+                      ),
             Meetup.new(
                        number: 1,
                        city: "Bern",
