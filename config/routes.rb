@@ -9,6 +9,8 @@ Ruvetia::Application.routes.draw do
 
   root :to => "pages#home"
 
+  get '/events', to: "pages#events"
+
   get '/auth/github/new', to: "auth/github#new", as: :auth_github
   get '/auth/github/create', to: "auth/github#create"
 

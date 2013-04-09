@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     @title = "Team"
   end
 
+  def events
+    @title = "Upcoming and past events"
+  end
+
 end
