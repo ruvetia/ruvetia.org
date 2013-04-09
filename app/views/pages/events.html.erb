@@ -1,1 +1,47 @@
-<h1><%= @title %></h1>
+<section class="header section red">
+  <div class="wrapper">
+    <div class="inner">
+      <%= image_tag "ruvetia-logo.png", class: "logo-small left" %>
+      <%= link_to raw("&larr; Back to home"), root_path %>
+      <div class="right">
+        <h1><%= @title %></h1>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</section>
+<% ruvetia_meetups.each do |meetup| %>
+<section class="events section white">
+  <div class="wrapper">
+    <div class="inner">
+      <div class="column-left left">
+        <h2>Ruvetia #<%= meetup.number %>, <%= meetup.city %></h2>
+        <div class="meta">
+          <%= meetup.date %>, <%= link_to meetup.location, meetup.map_src, target: "_BLANK" %>
+        </div>
+        <div class="meetup-signup">
+          <% if signed_in? %>
+            <% if !current_user.attends?(meetup.number) %>
+              <%= link_to "I will be there!", attend_path(meetup.number), method: :put, class: "btn" %>
+            <% else %>
+              <%= link_to "I can't make it!", cancel_path(meetup.number), method: :delete, class: "btn" %>
+            <% end %>
+          <% else %>
+            <%= link_to "Sign in using GitHub", auth_github_path(meetup: meetup.number), class: "btn" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="column-right right">
+        <ul>
+          <% meetup.participants.each do |participant| %>
+            <li>
+              <%= participant.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</section>
+<% end %>
