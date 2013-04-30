@@ -18,8 +18,10 @@ puts ""
 #
 # lol constants
 #
-DB_USERNAME = "postgres"
-DB_PASSWORD = ""
+puts "database user:"
+DB_USERNAME = gets.strip
+puts "database password:"
+DB_PASSWORD = gets.strip
 DB_HOST = "localhost"
 TEST_DATABASE = "ruvetia_test"
 DEV_DATABASE = "ruvetia_development"
@@ -55,6 +57,32 @@ unless system("which heroku 2>&1 > /dev/null")
   exit(1)
 else
   puts "+ Heroku toolbelt found."
+end
+
+
+#
+# Let's install some bundles
+#
+puts ""
+puts "Installing bundles..."
+system("bundle install >> log/bootstrap.log")
+
+require "bundler/setup"
+require 'erubis'
+
+#
+# Generate the database configuration
+#
+unless File.exists?("config/database.yml")
+  input = File.read('config/database_template.yml.erb')
+  template = Erubis::Eruby.new(input)    # create Eruby object
+
+  list = ['aaa', 'bbb', 'ccc']
+  content = template.result(:development_database => DEV_DATABASE,
+                            :test_database => TEST_DATABASE,
+                            :username => DB_USERNAME,
+                            :password => DB_PASSWORD)
+  File.open("config/database.yml", "w+") {|f| f.write content }
 end
 
 #
@@ -97,12 +125,6 @@ case gets.strip
     puts "DATABASES ARE READY!"
 end
 
-#
-# Let's install some bundles
-#
-puts ""
-puts "Installing bundles..."
-system("bundle install >> log/bootstrap.log")
 
 #
 # Restart the Rails Server if it is running (for pow users)

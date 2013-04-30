@@ -1,10 +1,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: ruvetia_development
+  database: <%= development_database %>
   pool: 5
-  username: postgres
-  password:
+  username: <%= username %>
+  password: <%= password %>
   min_messages: warning
   encoding: UTF8
   host: localhost
@@ -16,10 +16,10 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: ruvetia_test
+  database: <%= test_database %>
   pool: 5
-  username: postgres
-  password:
+  username: <%= username %>
+  password: <%= password %>
   min_messages: warning
   encoding: UTF8
   host: localhost
