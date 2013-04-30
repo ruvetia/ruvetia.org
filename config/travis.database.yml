@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: ruvetia_development
+  pool: 5
+  username: postgres
+  password:
+  min_messages: warning
+  encoding: UTF8
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: ruvetia_test
+  pool: 5
+  username: postgres
+  password:
+  min_messages: warning
+  encoding: UTF8
+  host: localhost
