@@ -11,15 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130301184145) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20130430094913) do
 
   create_table "members", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "github_id"
+    t.integer  "github_id"
     t.string   "github_login"
     t.string   "github_oauth_token"
     t.datetime "created_at"
@@ -33,6 +30,6 @@ ActiveRecord::Schema.define(version: 20130301184145) do
     t.datetime "updated_at"
   end
 
-  add_index "participations", ["meetup_number", "member_id"], name: "index_participations_on_meetup_number_and_member_id", unique: true
+  add_index "participations", ["meetup_number", "member_id"], name: "index_participations_on_meetup_number_and_member_id", unique: true, using: :btree
 
 end
