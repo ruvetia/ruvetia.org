@@ -3,9 +3,9 @@ $meetups = [
             Meetup.new(
                        number: 2,
                        city: "Basel",
-                       location: "TBA",
+                       location: "eoipso",
                        time: "03.05.2013  18:00",
-                       map_src: "https://maps.google.ch/maps?q=Basel&hl=de&sll=46.878968,8.223267&sspn=2.414281,5.136108&hnear=Basel,+Basel-Stadt&t=m&z=16"
+                       map_src: "https://maps.google.com/maps?q=eoipso&hl=en&ll=47.550927,7.593269&spn=0.081913,0.181103&sll=31.428663,-82.880859&sspn=49.27302,92.724609&hq=eoipso&radius=15000&t=m&z=13&iwloc=A"
                       ),
             Meetup.new(
                        number: 1,
