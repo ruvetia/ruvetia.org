@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 $meetups = [
             Meetup.new(
+                       number: 3,
+                       city: "Zug",
+                       location: "im Hof",
+                       time: "12.07.2013  18:00",
+                       map_src: "https://maps.google.ch/maps?q=Savi+im+Hof+GmbH&hl=de&ll=47.173845,8.511915&spn=0.037516,0.080509&cid=4429921772654024681&gl=CH&t=m&z=14&iwloc=A"
+                      ),
+            Meetup.new(
                        number: 2,
                        city: "Basel",
                        location: "eoipso",
