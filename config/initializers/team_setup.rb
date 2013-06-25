@@ -17,9 +17,9 @@ $team << Organizer.new(:danielpuglisi, 'Daniel Puglisi',
                        bio: "Fascinated by Ruby's english like syntax, the Rails Framework and the awesome community behind it, Daniel decided to put Ruby into his design and programming toolbox. Ruvetia is his attempt to make Ruby more fundamental and popular in Switzerland and to spread the love about this beautiful programming language and its extraordinary people behind it.")
 
 $team << Organizer.new(:kschiess, 'Kaspar Schiess',
-                       social_media: { 
-                        bitbucket: 'https://bitbucket.org/kschiess', 
-                        github: 'http://github.com/kschiess', 
+                       social_media: {
+                        bitbucket: 'https://bitbucket.org/kschiess',
+                        github: 'http://github.com/kschiess',
                         web: 'http://absurd.li',
                         twitter: 'https://twitter.com/kasparschiess' },
                        gravatar_hash: "ae4df18bf57748120b915d63b7e233d4",
