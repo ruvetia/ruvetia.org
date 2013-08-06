@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
 $meetups = [
+            Bbq.new(
+                    number: 3,
+                    city: "Bern",
+                    location: "A de Aare",
+                    time: "31.08.2013  12:00",
+                    map_src: "https://maps.google.ch/maps?q=46.981658,7.446174&hl=de&sll=46.813187,8.22421&sspn=2.552665,5.559082&t=m&z=16"
+                    ),
+
             Meetup.new(
                        number: 3,
                        city: "Zug",
