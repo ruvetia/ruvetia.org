@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 $meetups = [
             Bbq.new(
+                    id: 4,
                     number: 3,
                     city: "Bern",
                     location: "A de Aare",
@@ -9,6 +10,7 @@ $meetups = [
                     ),
 
             Meetup.new(
+                       id: 3,
                        number: 3,
                        city: "Zug",
                        location: "im Hof",
@@ -16,6 +18,7 @@ $meetups = [
                        map_src: "https://maps.google.ch/maps?q=Savi+im+Hof+GmbH&hl=de&ll=47.173845,8.511915&spn=0.037516,0.080509&cid=4429921772654024681&gl=CH&t=m&z=14&iwloc=A"
                       ),
             Meetup.new(
+                       id: 2,
                        number: 2,
                        city: "Basel",
                        location: "eoipso",
@@ -23,6 +26,7 @@ $meetups = [
                        map_src: "https://maps.google.com/maps?q=eoipso&hl=en&ll=47.550927,7.593269&spn=0.081913,0.181103&sll=31.428663,-82.880859&sspn=49.27302,92.724609&hq=eoipso&radius=15000&t=m&z=13&iwloc=A"
                       ),
             Meetup.new(
+                       id: 1,
                        number: 1,
                        city: "Bern",
                        location: "Musigbistrot",

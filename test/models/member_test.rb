@@ -14,7 +14,7 @@ class MemberTest < ActiveSupport::TestCase
 
     assert_equal 1, ferdinand.participations.count
     assert ferdinand.attends?(7)
-    assert_equal [7], ferdinand.participations.map(&:meetup_number)
+    assert_equal [7], ferdinand.participations.map(&:meetup_id)
   end
 
   test "attending a meeting where you already attend does not crash" do

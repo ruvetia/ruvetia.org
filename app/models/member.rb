@@ -4,18 +4,18 @@ class Member < ActiveRecord::Base
 
   validates :name, presence: true
 
-  def attend(meetup_number)
-    participations.create! meetup_number: meetup_number
+  def attend(meetup_id)
+    participations.create! meetup_id: meetup_id
   rescue ActiveRecord::RecordInvalid
     # nothing happens if you are already attending
   end
 
-  def cancel(meetup_number)
-    participations.where(meetup_number: meetup_number).first.destroy
+  def cancel(meetup_id)
+    participations.where(meetup_id: meetup_id).first.destroy
   end
 
-  def attends?(meetup_number)
-    participations.pluck(:meetup_number).include? meetup_number.to_i
+  def attends?(meetup_id)
+    participations.pluck(:meetup_id).include? meetup_id.to_i
   end
 
   def self.find_by_github_id(github_id)

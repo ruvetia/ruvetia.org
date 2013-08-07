@@ -1,9 +1,10 @@
 class Meetup
 
-  attr_reader :number, :title, :city, :time, :location, :map_src
+  attr_reader :id, :number, :title, :city, :time, :location, :map_src
 
   def initialize(attributes = {})
     @attributes = attributes
+    @id = attributes[:id]
     @number = attributes[:number]
     @city = attributes[:city]
     @location = attributes.fetch(:location, 'TBA')
@@ -22,7 +23,7 @@ class Meetup
   def participants
     Member.joins(:participations).
       select('members.*, participations.created_at').
-      where('meetup_number = ?', @number).
+      where('meetup_id = ?', @id).
       uniq.
       order('participations.created_at')
   end

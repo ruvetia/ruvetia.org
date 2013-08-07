@@ -2,6 +2,10 @@ require 'test_helper'
 
 class MeetupTest < ActiveSupport::TestCase
 
+  test "has a unique id" do
+    assert_equal 12, Meetup.new(id: 12).id
+  end
+
   test "a Meetup has a date and a city" do
     basel_drinkup = Meetup.new(city: 'Basel', time: '05.02.2012 17:40'.to_time)
     assert_equal 'Basel', basel_drinkup.city
@@ -34,7 +38,7 @@ class MeetupTest < ActiveSupport::TestCase
   end
 
   test "members participate in meetups" do
-    meetup = Meetup.new(number: 83)
+    meetup = Meetup.new(id: 83)
     john = Member.create!(name: "John")
     jane = Member.create!(name: "Jane")
     jane.attend(83)

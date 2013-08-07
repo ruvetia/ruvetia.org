@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130430094913) do
+ActiveRecord::Schema.define(version: 20130807074014) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "members", force: true do |t|
     t.string   "name"
@@ -24,12 +28,12 @@ ActiveRecord::Schema.define(version: 20130430094913) do
   end
 
   create_table "participations", force: true do |t|
-    t.integer  "meetup_number"
+    t.integer  "meetup_id"
     t.integer  "member_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "participations", ["meetup_number", "member_id"], name: "index_participations_on_meetup_number_and_member_id", unique: true, using: :btree
+  add_index "participations", ["meetup_id", "member_id"], name: "index_participations_on_meetup_id_and_member_id", unique: true, using: :btree
 
 end
