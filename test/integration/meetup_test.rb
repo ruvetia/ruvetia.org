@@ -6,7 +6,7 @@ class MeetupPageTest < ActionDispatch::IntegrationTest
   test "the home displays the upcomming meetups" do
     visit '/'
     meetups = page.all('.meetups li h3').map(&:text)
-    assert_equal ['BBQ.rb #3, Bern'], meetups
+    assert_equal ['Ruvetia #4, Lausanne'], meetups
   end
 
   test "you can attend a meetup using github" do

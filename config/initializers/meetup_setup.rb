@@ -1,5 +1,14 @@
 # -*- coding: utf-8 -*-
 $meetups = [
+            Meetup.new(
+                    id: 5,
+                    number: 4,
+                    city: "Lausanne",
+                    location: "TBA",
+                    time: "04.09.2013  18:30",
+                    map_src: "https://maps.google.ch/maps?q=lausanne&hl=de&sll=46.813187,8.22421&sspn=2.387246,4.680176&hnear=Lausanne,+Waadt&t=m&z=11"
+                    ),
+
             Bbq.new(
                     id: 4,
                     number: 3,
