@@ -4,9 +4,9 @@ $meetups = [
                     id: 5,
                     number: 4,
                     city: "Lausanne",
-                    location: "TBA",
+                    location: "Café Saint Pierre",
                     time: "04.10.2013  18:30",
-                    map_src: "https://maps.google.ch/maps?q=lausanne&hl=de&sll=46.813187,8.22421&sspn=2.387246,4.680176&hnear=Lausanne,+Waadt&t=m&z=11"
+                    map_src: "https://maps.google.ch/maps?q=Caf%C3%A9+Saint+Pierre,+Place+Benjamin-Constant,+Lausanne&hl=de&ie=UTF8&sll=46.835845,7.658535&sspn=1.275764,2.661438&oq=cafe+saint+pierr&hq=Caf%C3%A9+Saint+Pierre,&hnear=Place+Benjamin-Constant,+Lausanne,+Vaud&t=m&z=16"
                     ),
 
             Bbq.new(
