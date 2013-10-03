@@ -42,7 +42,7 @@ end
 #
 unless system("which bundle 2>&1 > /dev/null")
   puts "x You need to install Bundler:"
-  puts "  => gem isntall bundler"
+  puts "  => gem install bundler"
   exit(1)
 else
   puts "+ Bundler found."
