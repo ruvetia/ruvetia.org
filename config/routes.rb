@@ -14,4 +14,5 @@ Ruvetia::Application.routes.draw do
 
   put '/attend/:meetup', to: "participations#create", as: :attend
   delete '/cancel/:meetup', to: "participations#destroy", as: :cancel
+  get '/attendees/:meetup', to: "participations#index", as: :participants
 end

@@ -17,8 +17,9 @@ class MeetupPageTest < ActionDispatch::IntegrationTest
     assert_equal 1, Member.count
     assert_equal 1, Participation.count
 
-    # visible_participants = page.all('.meetups .meetup-participants li')
-    # assert_equal ['Max Molini'], visible_participants.map(&:text)
+    click_on "1 rubyist will attend"
+    json = JSON.parse(body)
+    assert_equal [{"name"=>"Max Molini", "github"=>"max"}], json
   end
 
   test "you can cancel a meetup participation" do
