@@ -20,7 +20,7 @@
           <% end %>
         </div>
         <div class="meetup-participants">
-          <%= link_to participants_path(meetup.id) do %>
+          <%= link_to participants_path(meetup.id, format: :json) do %>
             <%= pluralize(meetup.participants.count, "rubyist") %> will attend
           <% end %>
         </div>
