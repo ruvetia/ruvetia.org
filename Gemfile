@@ -1,21 +1,20 @@
 source 'https://rubygems.org'
 
 ruby '2.0.0'
-gem 'rails', '4.0.0'
+gem 'rails', '~> 4.1'
 
 gem 'oauth2'
 gem 'pg'
 
 gem 'compass-rails'
-gem 'sprockets-rails'
-gem 'sass-rails'
-gem 'coffee-rails'
-gem 'font-awesome-sass-rails'
+gem 'sass-rails', '~> 4.0.3'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'font-awesome-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platform: :ruby
 
-gem 'uglifier', '>= 1.0.3'
+gem 'uglifier', '>= 1.3.0'
 
 group :test do
   gem 'capybara'
