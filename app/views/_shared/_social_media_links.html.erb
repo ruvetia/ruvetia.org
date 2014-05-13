@@ -4,7 +4,7 @@
   <% if data.has_key?(:email) %>
     <li class="<%= orientation %>">
       <%= link_to "mailto:#{data[:email]}" do %>
-        <i class="icon-envelope"></i>
+        <%= fa_icon "envelope" %>
       <% end %>
     </li>
   <% end %>
@@ -12,7 +12,7 @@
   <% if data.has_key?(:twitter) %>
     <li class="<%= orientation %>">
       <%= link_to data[:twitter], :target => :blank do %>
-        <i class="icon-twitter"></i>
+        <%= fa_icon "twitter" %>
       <% end %>
     </li>
   <% end %>
@@ -20,7 +20,7 @@
   <% if data.has_key?(:mailing_list) %>
     <li class="<%= orientation %>">
       <%= link_to data[:mailing_list], :target => :blank do %>
-        <i class="icon-comments-alt"></i>
+        <%= fa_icon "comments" %>
       <% end %>
     </li>
   <% end %>
@@ -28,7 +28,7 @@
   <% if data.has_key?(:github) %>
     <li class="<%= orientation %>">
       <%= link_to data[:github], :target => :blank do %>
-        <i class="icon-github"></i>
+        <%= fa_icon "github" %>
       <% end %>
     </li>
   <% end %>
@@ -36,7 +36,7 @@
   <% if value=data[:bitbucket] %>
     <li class="<%= orientation %>">
       <%= link_to value, :target => :blank do %>
-        <i>B</i>
+        <%= fa_icon "bitbucket" %>
       <% end %>
     </li>
   <% end %>
@@ -44,7 +44,7 @@
   <% if data.has_key?(:web) %>
     <li class="<%= orientation %>">
       <%= link_to data[:web], :target => :blank do %>
-        <i class="icon-globe"></i>
+        <%= fa_icon "globe" %>
       <% end %>
     </li>
   <% end %>
