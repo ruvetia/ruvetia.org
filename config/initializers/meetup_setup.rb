@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 $meetups = [
             Meetup.new(
+                       id: 7,
+                       number: 7,
+                       city: "Luzern",
+                       location: "TBD",
+                       time: "17.10.2014 18:00",
+                       map_src: ""
+                      ),
+
+            Meetup.new(
                        id: 6,
                        number: 6,
                        city: "Bern",
