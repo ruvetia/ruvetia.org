@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.0.0-p353
+  - 2.1.2
 script:
   - cp config/travis.database.yml config/database.yml
   - psql -c 'create database ruvetia_test;' -U postgres
