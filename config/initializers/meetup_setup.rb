@@ -4,9 +4,9 @@ $meetups = [
                        id: 7,
                        number: 7,
                        city: "Luzern",
-                       location: "Rathaus Brauerei",
+                       location: "Havanna Café & Bar",
                        time: "31.10.2014 18:00",
-                       map_src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.4057738592937!2d8.306318999999991!3d47.05188999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47901f82f141019f%3A0x3dd4ed83fc6bcb61!2sRathaus+Brauerei!5e0!3m2!1sen!2sch!4v1412599978168"
+                       map_src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.6405381720174!2d8.307837999999993!3d47.047284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffba3cb1edf03%3A0x76e591b5fb5cb3c9!2sHavanna+Caf%C3%A9+%2B+Bar+GmbH!5e0!3m2!1sen!2sch!4v1413905565712"
                       ),
 
             Meetup.new(
