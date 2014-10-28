@@ -6,7 +6,7 @@ class ParticipationsController < ApplicationController
       { "name" => p.name,
         "github" => p.github_login}
     }
-    render json: attendees
+    render json: JSON.pretty_generate(attendees)
   end
 
   def create
