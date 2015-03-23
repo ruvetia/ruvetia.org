@@ -2,7 +2,7 @@
 $team = Team.new
 # ruvetia organizers in no particular order
 $team << Organizer.new(:senny, 'Yves Senn',
-                       social_media: { github: 'http://github.com/senny', twitter: 'https://twitter.com/fistofsenn', web: 'http://blog.senny.ch' },
+                       social_media: { github: 'http://github.com/senny', twitter: 'https://twitter.com/yves_senn', web: 'http://blog.senny.ch' },
                        gravatar_hash: "3d698e2872c07061a455d9e250861235",
                        bio: "Yves started experimenting with Ruby in late 2007. Since then he worked on medium to large scale Rails applications with a strong focus on automated testing. He is a Rails committer and works on other Open Source projects like spring and queue_classic.")
 
