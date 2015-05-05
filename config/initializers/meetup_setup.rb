@@ -4,9 +4,9 @@ $meetups = [
                        id: 8,
                        number: 8,
                        city: "Basel",
-                       location: "TBA",
+                       location: "Werk 8",
                        time: "08.05.2015 18:00",
-                       map_src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43082.83185617251!2d7.59445995!3d47.554615049999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479049c72769304f%3A0x361ceb70f36d8a90!2sBasel!5e0!3m2!1sen!2sch!4v1429883374194"
+                       map_src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5386.645932126084!2d7.594735293498037!3d47.54204262705834!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791b845fdb2acb3%3A0xcff581105a20a660!2sKantensprung+AG!5e0!3m2!1sen!2sch!4v1430826614995"
                       ),
 
             Meetup.new(
