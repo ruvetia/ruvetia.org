@@ -15,9 +15,8 @@ ActiveRecord::Schema.define(version: 20130807074014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
-  create_table "members", force: true do |t|
+  create_table "members", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.integer  "github_id"
@@ -27,7 +26,7 @@ ActiveRecord::Schema.define(version: 20130807074014) do
     t.datetime "updated_at"
   end
 
-  create_table "participations", force: true do |t|
+  create_table "participations", force: :cascade do |t|
     t.integer  "meetup_id"
     t.integer  "member_id"
     t.datetime "created_at"
