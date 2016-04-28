@@ -11,7 +11,7 @@
 
   <% if data.has_key?(:twitter) %>
     <li class="<%= orientation %>">
-      <%= link_to data[:twitter], :target => :blank do %>
+      <%= link_to data[:twitter], target: "_blank" do %>
         <%= fa_icon "twitter" %>
       <% end %>
     </li>
@@ -19,7 +19,7 @@
 
   <% if data.has_key?(:mailing_list) %>
     <li class="<%= orientation %>">
-      <%= link_to data[:mailing_list], :target => :blank do %>
+      <%= link_to data[:mailing_list], target: "_blank" do %>
         <%= fa_icon "comments" %>
       <% end %>
     </li>
@@ -27,7 +27,7 @@
 
   <% if data.has_key?(:github) %>
     <li class="<%= orientation %>">
-      <%= link_to data[:github], :target => :blank do %>
+      <%= link_to data[:github], target: "_blank" do %>
         <%= fa_icon "github" %>
       <% end %>
     </li>
@@ -35,7 +35,7 @@
 
   <% if value=data[:bitbucket] %>
     <li class="<%= orientation %>">
-      <%= link_to value, :target => :blank do %>
+      <%= link_to value, target: "_blank" do %>
         <%= fa_icon "bitbucket" %>
       <% end %>
     </li>
@@ -43,7 +43,7 @@
 
   <% if data.has_key?(:web) %>
     <li class="<%= orientation %>">
-      <%= link_to data[:web], :target => :blank do %>
+      <%= link_to data[:web], target: "_blank" do %>
         <%= fa_icon "globe" %>
       <% end %>
     </li>
